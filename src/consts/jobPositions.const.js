@@ -1,0 +1,17 @@
+export const JOB_POSITIONS = [
+  { key: "1", label: "Desenvolvedor Frontend" },
+  { key: "2", label: "Desenvolvedor Backend" },
+  { key: "3", label: "Desenvolvedor Full Stack" },
+  { key: "4", label: "Desenvolvedor Mobile" },
+  { key: "5", label: "Desenvolvedor de Software" },
+  { key: "6", label: "Engenheiro de Software" },
+  { key: "7", label: "Arquiteto de Software" },
+  { key: "8", label: "UI/UX Designer" },
+  { key: "9", label: "Analista de Sistemas" },
+  { key: "10", label: "Analista Programador" },
+  { key: "11", label: "DevOps Engineer" },
+  { key: "12", label: "Engenheiro de Dados" },
+  { key: "13", label: "QA Engineer" },
+  { key: "14", label: "Scrum Master" },
+  { key: "15", label: "Product Owner" },
+];

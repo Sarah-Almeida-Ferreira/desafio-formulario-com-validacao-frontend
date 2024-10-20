@@ -134,7 +134,7 @@ const Select = ({
         {isOpen && (
           <div
             data-testid="select-dropdown"
-            className="select-dropdown"
+            className="select-dropdown is-open"
           >
             <input
               type="text"

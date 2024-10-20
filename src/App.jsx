@@ -1,13 +1,13 @@
 
 import './App.css'
+import Form from './components/Form/Form';
 
 function App() {
 
   return (
     <>
       <main>
-        <h1>Seja bem vindo! :)</h1>
-        <p>Terceiro Desafio: Formulário de Cadastro de Membros</p>
+        <Form/>
       </main>
     </>
   );

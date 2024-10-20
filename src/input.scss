@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @apply bg-light-background-mute text-light-text;
+  font-family: Roboto, sans-serif;
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #f8f8f8 inset !important;
+  }
+}
+
+#root {
+  @apply p-3 sm:p-10 md:h-screen;
+}
+
+.card {
+  @apply md:max-w-4xl m-auto p-10 rounded-lg shadow-lg border-2 relative;
+
+  .card-label {
+    @apply absolute top-[-15px] left-7 px-2 rounded-lg bg-light-background-mute text-left;
+
+    .card-title {
+      @apply font-bold text-2xl text-primary-default;
+    }
+
+    .card-subtitle {
+      @apply font-bold mb-4 text-lg;
+    }
+  }
+
+  .card-body {
+    @apply grid gap-y-7 mt-8 rounded-lg text-left;
+  }
+}
+
+.form {
+  @apply grid gap-x-5 gap-y-7 md:grid-cols-2;
+}
+
+.button {
+  @apply bg-primary-default text-light-text font-semibold h-[40px] rounded-md px-3 float-right shadow-md;
+  @apply w-full md:w-auto transition-transform duration-200 hover:scale-110;
+}
+
+.field {
+  @apply grid gap-1 w-full text-left mx-auto;
+
+  .label {
+    @apply px-1;
+  }
+
+  .input {
+    @apply w-full bg-light-background-soft h-[40px] px-2;
+    @apply bg-gradient-to-r bg-no-repeat transition-[background-size] duration-200 ease-linear;
+    background-position: 0 100%;
+    background-size: 0 2px;
+
+    &:hover {
+      @apply from-dark-text to-dark-text;
+      background-size: 100% 2px;
+    }
+
+    &:focus {
+      @apply from-primary-default to-primary-default;
+      background-size: 100% 2px;
+      outline: none;
+    }
+  }
+}
+
+.select-container {
+  @apply w-full mx-auto relative;
+
+  .select-dropdown {
+    @apply absolute top-6 mt-1 w-full;
+    @apply bg-light-background-soft shadow-lg max-h-60 rounded-md ring-1 ring-black ring-opacity-5 overflow-auto z-10;
+    @apply transition-all duration-300 ease-in-out transform opacity-0 scale-95;
+
+    &.is-open {
+      @apply opacity-100 scale-100;
+    }
+
+    .select-search-input {
+      @apply sticky top-0;
+    }
+
+    .select-option {
+      @apply p-2 cursor-pointer outline-none hover:bg-light-background-mute;
+
+      &.selected {
+        @apply bg-primary-default text-light-text font-semibold;
+      }
+    }
+  }
+}
+
+.dialog {
+  @apply rounded-lg p-4;
+  @apply transform scale-95 transition-opacity transition-transform duration-150 ease-out origin-center opacity-0;
+  @apply bg-light-background-default text-light-text shadow-2xl shadow-black/25;
+
+  &.open {
+    @apply opacity-100 scale-100;
+
+    .dialog-header {
+      @apply flex justify-between mb-8 text-lg;
+
+      .dialog-title {
+        @apply text-primary-default font-bold;
+      }
+
+      .dialog-close-button {
+        @apply opacity-50 hover:opacity-100;
+      }
+    }
+
+    .dialog-content {
+      @apply grid gap-8;
+    }
+  }
+}
+
+dialog::backdrop {
+ @apply bg-dark-background-soft opacity-90;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @apply bg-dark-background-default text-dark-text;
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px #282828 inset !important;
+      -webkit-text-fill-color: #e5e6e8 !important;
+    }
+  }
+
+  .card {
+    @apply border-dark-background-mute;
+
+    .card-label {
+      @apply absolute top-[-15px] left-7 px-2 rounded-lg bg-dark-background-default text-left;
+    }
+  }
+
+  .field {
+    .input {
+      @apply bg-dark-background-mute;
+    }
+  }
+
+  .select-container {
+    .select-dropdown {
+      @apply bg-dark-background-mute;
+
+      .select-option {
+        @apply hover:bg-dark-background-soft hover:text-dark-text focus-visible:bg-dark-background-soft;
+      }
+    }
+  }
+
+  .dialog {
+    @apply bg-dark-background-mute text-dark-text;
+  }
+}
